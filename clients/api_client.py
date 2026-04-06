@@ -6,9 +6,9 @@ from httpx._urls import URL
 
 
 class APIClient:
-    def __init__(self, client: Client, base_url: URL | str) -> None:
+    def __init__(self, client: Client) -> None:
         self.client = client
-        self.client.base_url = base_url
+        self.base_url = client.base_url
 
     def _request(self,
                  method: str,
